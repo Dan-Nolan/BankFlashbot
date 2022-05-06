@@ -60,6 +60,7 @@ async function recoverFunds() {
     const simulation = await flashbotsProvider.simulate(signedBundle, blockNumber);
     if(!simulation.results) {
         console.log(simulation);
+        return;
     }
 
     provider.on("block", async (blockNumber) => {
